@@ -1,0 +1,40 @@
+/* --------------------------------------------------------------------- */
+/* Table of contents                                                     */
+/* --------------------------------------------------------------------- */
+
+nav.ds_side-navigation ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+nav.ds_side-navigation ul > li {
+  margin-bottom: 0;
+}
+
+/* Indent child links */
+nav.ds_side-navigation li > ul {
+  margin-left: 16px;
+}
+
+nav.ds_side-navigation ul > li > a {
+  display: block;
+  margin-bottom: 2px;
+  outline: 0 !important;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 40px;
+  padding-top: 12px;
+  text-decoration: none;
+  transition-property: background-color, outline-color;
+  transition-delay: 0s, 0s;
+  transition-duration: 0.2s, 0.2s;
+  transition-timing-function: ease, ease;
+}
+
+nav.ds_side-navigation ul > li > a:hover {
+  box-shadow: -3px 0px 0px 0px #0065bd;
+}
+
+nav.ds_side-navigation ul > li > a:focus {
+  box-shadow: -3px 0px 0px 0px #333333;
+}

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!-- Built with sgtemplates v.1.0.0 (2021-05-12) -->
+<!-- https://github.com/DataScienceScotland/sgtemplates/ -->
+<html xmlns="https://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  $if(sgtemplates.seo.description)$
+    <meta name="description" content="$sgtemplates.seo.description$">
+  $endif$
+  $if(sgtemplates.seo.keywords)$
+    <meta name="keywords" content="$for(sgtemplates.seo.keywords)$$sgtemplates.seo.keywords$, $endfor$">
+  $endif$
+  $for(author-meta)$
+    <meta name="author" content="$author-meta$">
+  $endfor$
+  $if(date-meta)$
+    <meta name="date" content="$date-meta$">
+  $endif$
+  <meta name="generator" content="pandoc">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" href="template_libs/sg/images/favicons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="template_libs/sg/images/favicons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="template_libs/sg/images/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  <link rel="apple-touch-icon" href="template_libs/sg/images/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="template_libs/sg/images/favicons/safari-pinned-tab.svg" color="#0065bd">
+  
+  <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+  
+  <!-- RStudio's default scripts and style sheets -->
+  $for(header-includes)$
+    $header-includes$
+  $endfor$
+  
+  <!-- SG's style sheets -->
+  <!-- Style sheets are broken up into separate files, where possible, to make them easier for users to change -->
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/design-system-base.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/design-system-fixes.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/layout.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar-full.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/navbar-mobile.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/print.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/toc.css">
+  <link rel="stylesheet" type="text/css" href="template_libs/sg/css/tocify.css">
+  
+  $if(sgtemplates.navigation.toc.sticky)$
+    <style type="text/css">
+      @media (min-width: 768px) {
+        nav.ds_side-navigation {
+          position: sticky;
+          top: 16px;
+        }
+      }
+    </style>
+  $endif$
+  
+  <!-- User style sheets -->
+  $for(css)$
+    <link rel="stylesheet" type="text/css" href="$css$">
+  $endfor$
+  
+  $if(sgtemplates.datatables)$
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="template_libs/datatables-1.10.23_sg/css/jquery.dataTables.min.css">
+    <script src="template_libs/datatables-1.10.23_sg/js/jquery.dataTables.min.js"></script>
+    <!-- DataTables features and settings -->
+    <script>
+      $$(document).ready(function() {
+        $$("table").DataTable( {
+          "info": $if(sgtemplates.datatables.features.info)$ true $else$ false $endif$,
+          "ordering": $if(sgtemplates.datatables.features.ordering)$ true $else$ false $endif$,
+          "paging": $if(sgtemplates.datatables.features.paging)$ true $else$ false $endif$,
+          "searching": $if(sgtemplates.datatables.features.searching)$ true $else$ false $endif$
+        } );
+      } );
+    </script>
+  $endif$
+  
+</head>
+
+<body class="article layout--component">
+  
+  <div class="ds_page">
+    
+    <!-- Page top section -->
+    <!-- Contains: Notifications; header; navigation elements (except breadcrumbs) -->
+    <div class="ds_page__top">
+      
+      <!-- Header -->
+      <header class="ds_site-header ds_site-header--gradient" role="banner">
+        <span id="page-top"></span>
+        
+        <!-- Site branding -->
+        <div class="ds_site-header__top">
+          <div class="ds_wrapper">
+            <div class="ds_site-header__content">
+              <div class="ds_site-branding">
+                <a class="ds_site-branding__logo ds_site-branding__link" href="/">
+                  <img class="ds_site-branding__logo-image" src="template_libs/sg/images/logos/scottish-government.svg" alt="Scottish Government logo" />
+                </a>
+                <div class="ds_site-branding__title">
+                  $if(sgtemplates.header.site_branding)$
+                    $sgtemplates.header.site_branding$
+                    $else$
+                      Scottish Government
+                  $endif$
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Phase banner -->
+        $if(sgtemplates.header.phase_banner)$
+        <div class="ds_phase-banner">
+          <div class="ds_wrapper">
+            <p class="ds_phase-banner__content">
+              $if(sgtemplates.header.phase_banner.tag)$
+                <strong class="ds_tag ds_phase-banner__tag">$sgtemplates.header.phase_banner.tag$</strong>
+              $endif$
+              <span class="ds_phase-banner__text">
+                $if(sgtemplates.header.phase_banner.text)$
+                  $sgtemplates.header.phase_banner.text$
+                  $else$
+                    $sgtemplates.header.phase_banner$
+                $endif$
+              </span>
+            </p>
+          </div>
+        </div>
+        $endif$
+        
+        <!-- Elements included before the body -->
+        <!-- Includes Bootstrap / default RStudio navbar -->
+        $if(include-before)$
+          <div class="ds_wrapper">
+            $for(include-before)$
+              $include-before$
+            $endfor$
+          </div>
+        $endif$
+        
+      </header>
+      
+      
+    </div>
+    
+    <!-- Page middle section -->
+    <!-- Contains breadcrumbs, table of contents, body, and main content -->
+    <div class="ds_page__middle">
+      <div id="body-wrapper" class="body-wrapper">
+        
+        <!-- Breadcrumbs -->
+        $if(sgtemplates.navigation.breadcrumb_trail)$
+          <div class="ds_wrapper">
+            <nav aria-label="Breadcrumbs" aria-role="breadcrumb">
+              <ol class="ds_breadcrumbs">
+                $for(sgtemplates.navigation.breadcrumb_trail)$
+                <li class="ds_breadcrumbs__item">
+                  $if(sgtemplates.navigation.breadcrumb_trail.href)$
+                    <a class="ds_breadcrumbs__link" href="$sgtemplates.navigation.breadcrumb_trail.href$">
+                  $endif$
+                  $if(sgtemplates.navigation.breadcrumb_trail.text)$
+                    $sgtemplates.navigation.breadcrumb_trail.text$
+                    $else$
+                      $sgtemplates.navigation.breadcrumb_trail$
+                  $endif$
+                  $if(sgtemplates.navigation.breadcrumb_trail.href)$
+                    </a>
+                  $endif$
+                </li>
+                $endfor$
+              </ol>
+            </nav>
+          </div>
+        $endif$
+        
+        <!-- Main content -->
+        <div class="ds_wrapper">
+          <!-- Elements within main-content are arranged according to the grid layout -->
+          <main id="main-content" class="ds_layout ds_layout--pl-$if(toc)$component$else$article$endif$">
+            
+            <!-- Sidebar -->
+            <!-- Contains automatically-generated table of contents -->
+            <div class="ds_layout__sidebar">
+              <nav class="ds_side-navigation" aria-label="Sections" data-module="ds-side-navigation">
+                $if(toc_float)$
+                  <div id="TOC" class="tocify"></div>
+                $else$
+                  $toc$
+                $endif$
+              </nav>
+            </div>
+            
+            <!-- Main body header -->
+            $if(title)$
+              <div class="ds_layout__header">
+                <header class="heading">
+                  <div class="ds_page-header">
+                    $if(sgtemplates.metadata.label)$
+                      <span class="ds_page-header__label ds_content-label">Report</span>
+                    $endif$
+                    <h1 class="ds_page-header__title title toc-ignore">$title$</h1>
+                    $if(subtitle)$
+                      <h3 class="subtitle">$subtitle$</h3>
+                    $endif$
+                    <dl class="ds_page-header__metadata ds_metadata">
+                      $if(date)$
+                        <div class="ds_metadata__item">
+                          <dt class="ds_metadata__key">Last updated</dt>
+                          <dd class="ds_metadata__value">$date$</dd>
+                        </div>
+                      $endif$
+                      $if(author)$
+                        <div class="ds_metadata__item">
+                          <dt class="ds_metadata__key">Authors</dt>
+                          $for(author)$
+                            <dd class="ds_metadata__value author">$author$</dd>
+                          $endfor$
+                        </div>
+                      $endif$
+                    </dl>
+                  </div>
+                </header>
+              </div>
+            $endif$
+            
+            <!-- Main body content -->
+            <div class="ds_layout__content toc-content">
+              $if(abstract)$
+                <p class="ds_leader">$abstract$</p>
+              $endif$
+              $body$
+            </div>
+            
+            <!-- Content to be included after the main body -->
+            $if(code_menu)$
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span>Code</span>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" style="min-width: 50px;">
+                  $if(code_folding)$
+                    <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+                    <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+                    $if(source_embed)$
+                      <li role="separator" class="divider"></li>
+                    $endif$
+                  $endif$
+                $if(source_embed)$
+                  <li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+                $endif$
+                </ul>
+              </div>
+            $endif$
+            
+            $for(include-after)$
+              $include-after$
+            $endfor$
+            
+          </main> <!-- /#main-content -->
+        </div> <!-- /.ds_wrapper -->
+      </div> <!-- /#body-wrapper -->
+    </div> <!-- /.ds_page__middle -->
+    
+    <!-- "Back to top" floating button -->
+    <nav data-module="ds-back-to-top">
+      <div class="ds_back-to-top">
+        <a class="ds_back-to-top__button" href="#page-top">
+          Back to top
+        </a>
+      </div>
+    </nav>
+    
+    <!-- Page bottom section -->
+    <!-- Contains: Footer; scripts -->
+    <div class="ds_page__bottom">
+      
+      <!-- Site footer -->
+      <footer class="ds_site-footer ds_reversed">
+        <div class="ds_wrapper">
+          <div class="ds_site-footer__content">
+            
+            <!-- Links -->
+            <!-- Links are referred to as "items" in the Design System vocabulary -->
+            <!-- This section should contain links to accessibility and privacy statements, cookie controls, and contact information -->
+            $if(sgtemplates.footer.link)$
+              <ul class="ds_site-footer__site-items">
+                $for(sgtemplates.footer.link)$
+                  <li class="ds_site-items__item">
+                      <a $if(sgtemplates.footer.link.href)$href="$sgtemplates.footer.link.href$"$endif$>
+                    $if(sgtemplates.footer.link.text)$
+                      $sgtemplates.footer.link.text$
+                      $else$
+                        $sgtemplates.footer.link$
+                    $endif$
+                    </a>
+                  </li>
+                $endfor$
+              </ul>
+            $endif$
+            
+            <!-- Copyright statement -->
+            <div class="ds_site-footer__copyright">
+              <a class="ds_site-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
+                <img src="template_libs/sg/images/logos/ogl.svg" alt="Open Government License Logo" />
+              </a>
+              <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated.</p>
+              <p>&copy; Crown Copyright</p>
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+      
+    </div> <!-- /.ds_page__bottom -->
+    
+  </div> <!-- /.ds_page -->
+  
+  <div id="embedded-scripts">
+    
+    <!-- MathJax -->
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <!-- Navbar -->
+    $if(navbar)$
+      <script>
+        // Manage active state of menu based on current page
+        $$(document).ready(function () {
+          // Active menu anchor
+          href = window.location.pathname
+          href = href.substr(href.lastIndexOf('/') + 1)
+          if (href === "")
+            href = "index.html";
+          var menuAnchor = $$('a[href="' + href + '"]');
+
+          // Mark it active
+          menuAnchor.parent().addClass('active');
+
+          // If it's got a parent navbar menu, mark it active as well
+          menuAnchor.closest('li.dropdown').addClass('active');
+        });
+      </script>
+    $endif$
+    
+    <!-- Tabsets -->
+    <script>
+      $$(document).ready(function () {
+        window.buildTabsets("$idprefix$TOC");
+      });
+    </script>
+    
+    <!-- Tocify -->
+    $if(toc)$
+    <script>
+      $$(document).ready(function () {
+    
+      // move toc-ignore selectors from section div to header
+      $$('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+    
+      // establish options
+      var options = {
+        selectors: "$toc_selectors$",
+        theme: "bootstrap3",
+        context: '.toc-content',
+        hashGenerator: function (text) {
+          return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        },
+        ignoreSelector: ".toc-ignore",
+        scrollTo: 0
+      };
+    
+      $if(toc_collapsed)$
+        options.showAndHide = true;
+      $else$
+        options.showAndHide = false;
+      $endif$
+    
+      $if(toc_smooth_scroll)$
+        options.smoothScroll = true;
+      $else$
+        options.smoothScroll = false;
+      $endif$
+    
+      // Tocify
+        var toc = $$("#$idprefix$TOC").tocify(options).data("toc-tocify");
+      });
+    </script>
+    
+    <style type="text/css">
+      $if(toc_collapsed)$
+        $else$
+        .tocify-subheader {
+          display: inline;
+        }
+        .tocify-subheader .tocify-item {
+          font-size: 1em;
+        }
+      $endif$
+      
+      .ds_side-navigation ul {
+        list-style-type: none;
+      }
+    </style>
+    $endif$
+
+  </div> <!-- /#embedded-scripts -->
+  
+</body>
+
+</html>

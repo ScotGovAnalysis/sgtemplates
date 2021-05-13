@@ -1,0 +1,34 @@
+/* --------------------------------------------------------------------- */
+/* Tocify (JavaScript floating table of contents)                        */
+/* --------------------------------------------------------------------- */
+
+.tocify {
+  margin: 0;
+  max-width: 288px;
+  position: unset;
+  width: calc(0.25 * 100% - 32px);
+}
+
+@media (max-width: 767px) {
+  .tocify {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .tocify {
+    width: calc(0.33 * 768px - 32px);
+  }
+}
+
+@media (min-width: 992px) {
+  .tocify {
+    width: calc(0.25 * 960px - 32px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .tocify {
+    width: calc(0.25 * 1152px - 32px);
+  }
+}

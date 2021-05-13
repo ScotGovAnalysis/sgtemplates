@@ -1,0 +1,93 @@
+---
+title: "Example Page"
+author: "`r as.character(Sys.info()[7])`"
+date: "`r Sys.Date()`"
+sgtemplates:
+  datatables:
+    features:
+      info: true
+      ordering: true
+      paging: true
+      searching: false
+  footer:
+    link:
+      - href: "privacy.html"
+        text: "Privacy"
+      - href: "cookies.html"
+        text: "Cookies"
+      - href: "accessibility.html"
+        text: "Accessibility"
+      - href: "contact.html"
+        text: "Contact"
+  header:
+    phase_banner:
+      tag: "WIP"
+      text: "This is a work in progress."
+    site_branding: "Scottish Government"
+  metadata:
+    label: "Report"
+  navigation:
+    breadcrumb_trail:
+      - href: "index.html"
+        text: "Home"
+      - text: "Example Page"
+    toc:
+      sticky: false
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Markdown
+
+## About R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+# Features
+
+## Plots
+
+You can embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Mathematics (MathJax)
+
+This template uses MathJax to render mathematical notation in-browser.
+
+Use dollar signs as your delimiter for maths. A single dollar sign renders your maths inline.
+
+$c^2 = a^2 + b^2$
+
+Two dollar signs center-aligns your maths.
+
+$$ax^2 + bx + c = 0$$
+
+Complex mathematics is supported, too.
+
+$$\mathbf{P}((X,Y) \in B) = \iint\limits_{(x,y) \in B} f_{X,Y}(x,y) \,dx \,dy$$
+
+## DataTables
+
+Support for [DataTables](https://www.datatables.net/) is included. DataTables allows for the creation of advanced tables with greater user interaction.
+
+```{r kable, echo = FALSE}
+knitr::kable(
+  x = iris,
+  format = "html",
+  caption = "An example table, generated using the Kable library.",
+  caption.short = "A short caption."
+)
+```

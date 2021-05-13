@@ -1,0 +1,21 @@
+body {
+  font-size: inherit;
+}
+
+@media (max-width: 767px) {
+  .ds_site-branding__logo+.ds_site-branding__title {
+    display: block;
+  }
+}
+
+.ds_site-branding__logo+.ds_site-branding__title {
+    padding-left: inherit;
+}
+
+#datatables {
+  font-size: 16px;
+}
+
+#embedded-scripts {
+  display: none;
+}

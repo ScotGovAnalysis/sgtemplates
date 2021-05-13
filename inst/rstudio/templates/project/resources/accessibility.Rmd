@@ -1,0 +1,32 @@
+---
+title: "Accessibility Statement"
+author: "`r as.character(Sys.info()[7])`"
+date: "`r Sys.Date()`"
+sgtemplates:
+  footer:
+    link:
+      - href: "privacy.html"
+        text: "Privacy"
+      - href: "cookies.html"
+        text: "Cookies"
+      - href: "accessibility.html"
+        text: "Accessibility"
+      - href: "contact.html"
+        text: "Contact"
+  header:
+    phase_banner:
+      tag: "WIP"
+      text: "This is a work in progress."
+    site_branding: "Scottish Government"
+  navigation:
+    breadcrumb_trail:
+      - href: "index.html"
+        text: "Index"
+      - text: "Accessibility Statement"
+    toc:
+      sticky: false
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```

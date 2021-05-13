@@ -1,0 +1,104 @@
+@media print {
+  
+  /* ------------------------------------------------------------------- */
+  /* Page Layout */
+  /* ------------------------------------------------------------------- */
+  
+  @page {
+    margin-bottom: 1.27cm;
+    margin-left: 1.27cm;
+    margin-right: 1.27cm;
+    margin-top: 1.27cm;
+  }
+  
+  /* ------------------------------------------------------------------- */
+  /* Common Elements */
+  /* ------------------------------------------------------------------- */
+  
+  body {
+    color: black !important;
+    font-size: 14px;
+    line-height: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0 !important;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.4em;
+  }
+  
+  h3 {
+    font-size: 1.2em;
+  }
+  
+  h4, h5, h6 {
+    font-size: 1em;
+    text-decoration: underline;
+  }
+  
+  /* ------------------------------------------------------------------- */
+  /* Hidden Elements */
+  /* ------------------------------------------------------------------- */
+  
+  /* Hide header, footer, navigation, and other elements */
+  #TOC, .dataTables_length, .dataTables_paginate, .navbar, footer, header, nav {
+    display: none;
+  }
+  
+  /* ------------------------------------------------------------------- */
+  /* Hyperlinks */
+  /* ------------------------------------------------------------------- */
+  
+  /* Print URLs after each hyperlink */
+  p a[href^="http://"]:after, a[href^="https://"]:after {
+    content: " (" attr(href) ")";
+    text-decoration: none;
+  }
+  
+  /* Do not print hyperlinks to anchors */
+  p a[href^="#"]:after {
+    display: none;
+  }
+  
+  p a {
+    word-wrap: break-word;
+  }
+  
+  /* ------------------------------------------------------------------- */
+  /* Tabs */
+  /* ------------------------------------------------------------------- */
+  
+  /* Display all tabbed content */
+  .tab-content > .tab-pane {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .tab-content {
+    border-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Hide tab navigation */
+  .nav-tabs {
+    display:none;
+  }
+  
+  /* ------------------------------------------------------------------- */
+  /* Figures, Images, and Tables */
+  /* ------------------------------------------------------------------- */
+  
+  /* Limit the position and size of elements */
+  figure, img, table {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+  
+}

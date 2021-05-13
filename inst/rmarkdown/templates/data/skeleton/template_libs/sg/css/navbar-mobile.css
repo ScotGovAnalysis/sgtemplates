@@ -1,0 +1,164 @@
+/* --------------------------------------------------------------------- */
+/* Bootstrap navbar for mobile views                                     */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 767px){
+  
+  .js-enabled .navbar {
+    display:none;
+    position:fixed
+  }
+
+  .js-enabled .js-toggle-menu,.js-enabled .js-close-menu{
+    display:block
+  }
+
+  .js-enabled div.navbar > div.container > div.navbar-header > button {
+    position:absolute;
+    right:0;
+    top:0
+  }
+
+  .js-enabled .navbar {
+    position:absolute
+  }
+
+  .js-enabled .navbar.menu-is-open{
+    display:block
+  }
+  
+  .ds_site-navigation {
+    display: block;
+  }
+  
+  .navbar-brand::after {
+    content: "Menu";
+    display: block;
+  }
+  
+  div.navbar {
+    box-sizing: border-box;
+    color: #333 !important;
+    left: 0;
+    margin: 0;
+    overflow: auto;
+    right: 0;
+    z-index: 10;
+  }
+  
+  div.navbar > div.container > div.navbar-header {
+    color: #333 !important;
+  }
+  
+  /* Navbar button */
+  div.navbar > div.container > div.navbar-header > button {
+    display: block !important;
+    outline: 0 !important;
+    background-color: transparent;
+    color: #0065bd;
+    font-weight: 400;
+    height: 100%;
+    transition: background-color .2s,outline-color .2s;
+    z-index: 1;
+  }
+  
+  div.navbar > div.container > div.navbar-header > button:focus {
+    background-color:#fdd522;
+    box-shadow: inset 0 -3px #333,inset 0 -3px #333;
+  }
+  
+  div.navbar > div.container > div.navbar-header > button:hover {
+    color:#00437e;
+  }
+  
+  div.navbar > div.container > div.navbar-header > button:hover:not(:focus) {
+    background-color: #d9effc;
+  }
+  
+  div.navbar > div.container > div.navbar-header > button--open {
+    background-color:#f8f8f8;
+    color:#0065bd
+  }
+  /* End navbar button */
+  
+  .ds_mobile-navigation__backdrop{
+    background:rgba(255,255,255,0.8) !important;
+    bottom:0;
+    left:0;
+    margin:0;
+    position:fixed;
+    right:0;
+    top:0;
+    transition-duration:.2s;
+    width:100%;
+    z-index:1
+  }
+
+  .ds_mobile-navigation__backdrop::after{
+    background:linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
+    content:'';
+    height:11px;
+    left:0;
+    position:absolute;
+    right:0;
+    top:0
+  }
+
+  div.navbar > div.container {
+    background: #f8f8f8;
+    overflow: hidden;
+    padding: 0 16px; 
+  }
+  
+  div.navbar > div.container > div.navbar-collapse {
+    margin:24px 0;
+    overflow:hidden
+  }
+  
+  /* Navbar content */
+  div.navbar > div.container > div.navbar-collapse > ul {
+    list-style-type:none;
+    margin:0 0 8px
+  }
+  
+  div.navbar > div.container > div.navbar-collapse > ul > li {
+    margin: 0;
+  }
+  
+  div.navbar > div.container > div.navbar-collapse > ul > li:not(:last-child) {
+    border-bottom: 1px solid #b3b3b3;
+  }
+  
+  div.navbar > div.container > div.navbar-collapse > ul > li > a {
+    color:#333;
+    display:block;
+    padding:16px 16px;
+    text-decoration:none
+  }
+  
+  div.navbar > div.container > div.navbar-collapse > ul > li > a:focus{
+    border-left:4px solid #0065bd;
+    box-shadow:0 4px #333;
+    outline:none;
+    padding-left:12px;
+    position:relative
+  }
+  
+  div.navbar > div.container > div.navbar-collapse > ul > li > a:hover{
+    border-left:4px solid #0065bd;
+    padding-left:12px
+  }
+  
+  div.navbar > div.container > div.navbar-collapse > ul > li > a.sgt_current_page{
+    background-color:#f8f8f8;
+    border-left:4px solid #0065bd;
+    padding-left:12px
+  }
+  /* End navbar content */
+  
+  html.menu-is-open,html.menu-is-open body{
+    overflow-y:hidden;
+    position:relative
+  }
+  
+}

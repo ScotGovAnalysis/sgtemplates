@@ -1,0 +1,6 @@
+Title: Scottish Government Website
+Binding: site_skeleton
+Subtitle: Create a simple R Markdown website with the Scottish Government's Design System styles. Includes SG branding, additional metadata and style options, and accessibility features.
+Caption: Create an R Markdown website with Scottish Government styles
+OpenFiles: _site.yml, *.Rmd
+Icon: scottish-flag.png

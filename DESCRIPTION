@@ -1,0 +1,16 @@
+Package: sgtemplates
+Title: Scottish Government R Markdown Templates
+Version: 1.0.0
+Authors@R:
+  person(
+    given = "Miles",
+    family = "Drake",
+    role = c("aut", "cre"),
+    email = "miles.drake@gov.scot"
+  )
+Description: R markdown templates for data analysts working for the Scottish Government.
+License: `use_gpl3_license()`
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1

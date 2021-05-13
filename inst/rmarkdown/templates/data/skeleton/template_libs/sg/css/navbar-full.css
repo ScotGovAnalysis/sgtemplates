@@ -1,0 +1,94 @@
+/* --------------------------------------------------------------------- */
+/* Bootstrap navbar for desktop views                                    */
+/* --------------------------------------------------------------------- */
+
+@media (min-width: 768px){
+  
+  .navbar {
+    background-color: inherit;
+    border: 0;
+    box-sizing: inherit;
+    clear: both;
+    display: block;
+    font-size: 16px;
+    margin: inherit;
+    margin-bottom: -8px;
+    margin-left: -14px;
+    position: inherit;
+    z-index: inherit;
+  }
+  
+  #navbar > ul {
+    display: flex;
+    flex-wrap: wrap;
+    float: none;
+    list-style-type: none;
+    margin-bottom: 0px;
+    margin-left: -16px;
+    margin-right: 0px;
+    margin-top: 0px;
+  }
+  
+  #navbar > ul > li > a {
+    color: currentcolor;
+    line-height: inherit;
+    outline: none;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    position: relative;
+    text-decoration-color: currentcolor;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    white-space: nowrap;
+  }
+  
+  /* Start state highlighting and animations */
+  
+  #navbar > ul > li > a {
+    transition-delay: 0s;
+    transition-duration: 0s;
+    transition-property: color, background-color, outline;
+    transition-timing-function: ease;
+  }
+  
+  #navbar > ul > li > a:hover:not(:focus) {
+    background-color: rgb(217, 239, 252);
+    color: rgb(0, 67, 126);
+  }
+  
+  #navbar > ul > li > a:focus {
+    background-color: rgb(253, 213, 34);
+    box-shadow: rgb(51, 51, 51) 0px 3px;
+    padding-bottom: 5px;
+  }
+  
+  #navbar > ul > li > a::after {
+      background-color: rgb(0, 101, 189);
+      bottom: 0px;
+      content: "";
+      height: 3px;
+      left: 50%;
+      opacity: 0;
+      position: absolute;
+      right: 50%;
+      transition-property: left, right, opacity;
+      transition-delay: 0s;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+  }
+  
+  #navbar > ul > li > a:hover::after {
+    left: 16px;
+    opacity: 1;
+    right: 16px;
+  }
+  
+  #navbar > ul > li > a:focus::after {
+      display: none;
+  }
+  
+  /* End state highlighting and animations */
+  
+}
